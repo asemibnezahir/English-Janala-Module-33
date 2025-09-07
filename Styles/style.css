@@ -1,0 +1,27 @@
+/* All Google Fonts Classes */
+
+.poppins-font{
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.inter-font{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.tiro-bangla-regular{
+  font-family: "Tiro Bangla", serif;
+  font-style: normal;
+}
+
+.tiro-bangla-regular-italic{
+  font-family: "Tiro Bangla", serif;
+  font-style: italic;
+}
+
+.hind-siliguri-font{
+  font-family: "Hind Siliguri", sans-serif;
+  font-style: normal;
+}

@@ -20,7 +20,7 @@ const loadWord = (id) =>{
     fetch(levelUrl)
     .then(res=>res.json())
     .then(obj=>{
-        
+
         // Handling active buttons
         const activeBtn = document.querySelectorAll('.les-btn');
         activeBtn.forEach(but => {
@@ -30,25 +30,28 @@ const loadWord = (id) =>{
         clickedBtn.classList.add("lesson-active-btn");
 
 
-        // Handle If Any Lessons don't Exist
-        if(obj.data.length===0)
-        {
-            const emptyClick = document.getElementById('empty-show');
-            emptyClick.classList.remove('hidden');
-            emptyClick.classList.add('flex');
-            lessonClick.classList.add('hidden');
-            lessonClick.classList.remove('grid');
-            lessonDefault.classList.add('hidden');
-            return;
-        }
         displayWords(obj.data);
     });
     
 }
 
 const displayWords =(words)=>{
+    
     const wordConatainer = document.getElementById('word-container');
     wordConatainer.innerHTML = '';
+    if(words.length===0)
+    {
+        wordConatainer.classList.remove('grid');
+        //Container for Empty Lessons
+        wordConatainer.innerHTML = `
+        <div id="empty-show" class="bg-gray-200 w-11/12 mx-auto min-h-[200px] p-7 rounded-[24px] flex flex-col justify-center mb-[20px] ">
+            <img src="assets/alert-error.png" alt="Alert Icon" height="96px" width="96px" class="mx-auto">
+            <p class="hind-siliguri-font text-[16px] text-[#79716B] text-center my-[12px]">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h3 class="hind-siliguri-font text-[34px] text-center">নেক্সট Lesson এ যান</h3>
+        </div>
+        `;
+        return;
+    }
     for(word of words)
     {
         const wordCard = document.createElement("div");

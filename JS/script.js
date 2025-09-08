@@ -20,6 +20,16 @@ const loadWord = (id) =>{
     fetch(levelUrl)
     .then(res=>res.json())
     .then(obj=>{
+        
+        // Handling active buttons
+        const activeBtn = document.querySelectorAll('.les-btn');
+        activeBtn.forEach(but => {
+            but.classList.remove('lesson-active-btn');                
+        });
+        const clickedBtn = document.getElementById(`lesson-btn-${id}`);
+        clickedBtn.classList.add("lesson-active-btn");
+
+
         // Handle If Any Lessons don't Exist
         if(obj.data.length===0)
         {
@@ -29,11 +39,9 @@ const loadWord = (id) =>{
             lessonClick.classList.add('hidden');
             lessonClick.classList.remove('grid');
             lessonDefault.classList.add('hidden');
+            return;
         }
-        else
-        {
-            displayWords(obj.data)
-        }
+        displayWords(obj.data);
     });
     
 }
@@ -48,9 +56,9 @@ const displayWords =(words)=>{
         wordCard.innerHTML = 
         `
             <div>
-                <h2 class="name inter-font font-bold text-[32px]">${word.word}</h1>
+                <h2 class="name inter-font font-bold text-[32px]">${word.word? word.word : "No Meaningful Word"}</h1>
                 <p class="inter-font font-medium text-[20px] my-[24px]">Meaning /Pronounciation</p>
-                <h2 class="hind-siliguri-font font-semibold text-[32px]">"${word.meaning} / ${word.pronunciation}"</h2>
+                <h2 class="hind-siliguri-font font-semibold text-[32px]">"${word.meaning? word.meaning : "অর্থ পাওয়া যায়নি"} / ${word.pronunciation? word.pronunciation: "উচ্চারন পাওয়া যায়নি"}"</h2>
             </div>
 
             <div class="card-btn flex justify-between mt-12">
@@ -74,7 +82,7 @@ const displayLessons = (lessons)=>{
         lessonBtn.classList.add("mb-[20px]");
 
         // Added onclick & a funtion with dynamic parameter on it [onclick="loadWord(${lesson.level_no})"]
-        lessonBtn.innerHTML =`<button onclick="loadWord(${lesson.level_no})" class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i> Learn - ${lesson.level_no} </button>`;
+        lessonBtn.innerHTML =`<button onclick="loadWord(${lesson.level_no})" class="btn btn-outline btn-primary les-btn" id = "lesson-btn-${lesson.level_no}"><i class="fa-solid fa-book-open"></i> Lesson - ${lesson.level_no} </button>`;
         
         // Append the main body in container
         levelConatainer.appendChild(lessonBtn);

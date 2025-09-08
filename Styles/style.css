@@ -35,3 +35,10 @@
 /* #word-container{
   grid-template-columns: repeat(auto-fit,minmax(350px,max-content));
 } */
+
+/* Handling Lesson Button Active UI */
+.lesson-active-btn{
+  background-color: #3B25C1;
+  color: white;
+  font-weight: bold;
+}

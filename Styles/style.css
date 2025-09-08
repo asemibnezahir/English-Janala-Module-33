@@ -29,3 +29,9 @@
   font-family: "Hind Siliguri", sans-serif;
   font-style: normal;
 }
+
+
+/* Handling Auto Card Center */
+/* #word-container{
+  grid-template-columns: repeat(auto-fit,minmax(350px,max-content));
+} */

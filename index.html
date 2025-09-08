@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -21,13 +22,70 @@
     <!-- Adding Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap"
+        rel="stylesheet">
 
 </head>
-<body>
-    
 
+<body>
+
+    <!-- Nav Section -->
+    <header>
+        <div class="navbar bg-base-100 shadow-sm lg:px-12 flex justify-center bg-[#EDF7FF]">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <li><a><i class="fa-solid fa-question"></i> FAQ</a></li>
+                        <li><a><i class="fa-solid fa-book-open"></i> Learn</a></li>
+                        <li><a><i class="fa-solid fa-right-from-bracket"></i> LogOut</a></li>
+                    </ul>
+                </div>
+                <div class="logo flex gap-1 items-center">
+                    <span class="poppins-font font-semibold text-[20px]">English</span>
+                    <img src="assets/logo.png" alt="Logo">
+                    <span class="tiro-bangla-regular text-[20px]">জানালা</span>
+                </div>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 space-x-[16px]">
+                    <li><a class="btn btn-outline btn-primary"><i class="fa-solid fa-question"></i> FAQ</a></li>
+                    <li><a class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i> Learn</a></li>
+                    <li><a class="btn btn-outline btn-primary"><i class="fa-solid fa-right-from-bracket"></i> LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner flex flex-col-reverse lg:flex-row justify-between items-center w-11/12 mx-auto gap-8">
+        <div class="content flex-1 text-center lg:text-left">
+            <h1 class="poppins-font font-bold text-[48px] mb-[20px]"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+            <p class="hind-siliguri-font font-medium text-[20px] lg:text-[24px] text-[#18181B]">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+            <form class="flex flex-col gap-5 mt-[40px] items-center lg:items-start">
+                <input type="text" placeholder="Enter Your Name" class="input input-neutral block" />
+                <input type="password" placeholder=".................." class="input input-neutral block" />
+                <button class="btn btn-primary max-w-[120px]">Get Started</button>
+            </form>
+        </div>
+        <div class="image flex-1">
+            <img src="assets/hero-student.png" alt="Banner Image">
+        </div>
+    </section>
+
+
+    
     <!-- Adding External JavaScript File -->
     <script src="JS/script.js"></script>
 </body>
+
 </html>

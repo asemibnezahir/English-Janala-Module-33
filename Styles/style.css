@@ -1,5 +1,9 @@
-/* All Google Fonts Classes */
+/* For Taiwind Suggestion */
+@import "tailwindcss";
 
+
+
+/* All Google Fonts Classes */
 .poppins-font{
   font-family: "Poppins", sans-serif;
   font-style: normal;

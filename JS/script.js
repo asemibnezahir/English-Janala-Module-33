@@ -6,10 +6,36 @@ const loadLessons = () => {
 }
 
 const loadWord = (id) =>{
+    // Handling Lesson Click Condition
+    const lessonClick = document.getElementById('word-container');
+    const lessonDefault = document.getElementById('default-show');
+    lessonClick.classList.remove('hidden');
+
+
+    lessonClick.classList.add('grid');
+    lessonDefault.classList.add('hidden');
+
+    // Fetching
     const levelUrl = `https://openapi.programming-hero.com/api/level/${id}`
     fetch(levelUrl)
     .then(res=>res.json())
-    .then(obj=> displayWords(obj.data));
+    .then(obj=>{
+        // Handle If Any Lessons don't Exist
+        if(obj.data.length===0)
+        {
+            const emptyClick = document.getElementById('empty-show');
+            emptyClick.classList.remove('hidden');
+            emptyClick.classList.add('flex');
+            lessonClick.classList.add('hidden');
+            lessonClick.classList.remove('grid');
+            lessonDefault.classList.add('hidden');
+        }
+        else
+        {
+            displayWords(obj.data)
+        }
+    });
+    
 }
 
 const displayWords =(words)=>{
@@ -55,4 +81,7 @@ const displayLessons = (lessons)=>{
     }
 }
 loadLessons();
+
+
+
 

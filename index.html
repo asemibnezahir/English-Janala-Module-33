@@ -89,13 +89,27 @@
         <div id="level-container" class="flex flex-wrap justify-center gap-5">
 
         </div>
-        <div id="word-container" class="bg-gray-200 w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-7 p-7 rounded-[24px]">
+        <div id="word-container" class="bg-gray-200 w-11/12 mx-auto grid-cols-1 lg:grid-cols-3 gap-7 p-7 rounded-[24px] hidden"> <!-- hidden to handle click condition -->
             <!-- <div class="word-card rounded-[16px] py-12 px-5 text-center bg-white">
                
             </div> -->
         </div>
+
+        <!-- Default part for container -->
+        <div id="default-show" class="bg-gray-200 w-11/12 mx-auto min-h-[200px] p-7 rounded-[24px] flex flex-col justify-center mb-[20px]">
+            <p class="hind-siliguri-font text-[16px] text-[#79716B] text-center my-[12px]">আপনি এখনো কোন Lesson Select করেন নি</p>
+            <h3 class="hind-siliguri-font text-[34px] text-center">একটি Lesson Select করুন।</h3>
+        </div>
+
+        <!-- Container for Empty Lessons -->
+        <div id="empty-show" class="bg-gray-200 w-11/12 mx-auto min-h-[200px] p-7 rounded-[24px] flex-col justify-center mb-[20px] hidden"> <!-- hidden to handle lesson empty condition -->
+            <img src="assets/alert-error.png" alt="Alert Icon" height="96px" width="96px" class="mx-auto">
+            <p class="hind-siliguri-font text-[16px] text-[#79716B] text-center my-[12px]">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h3 class="hind-siliguri-font text-[34px] text-center">নেক্সট Lesson এ যান</h3>
+        </div>
     </section>
 
+   
 
     <!-- Adding External JavaScript File -->
     <script src="JS/script.js"></script>
